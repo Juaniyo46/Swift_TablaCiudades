@@ -14,10 +14,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     let arrayCiudades = ["Linares","Granada","Málaga","Madrid","Barcelona"]
+    let filteredCiudades = [String]()
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    
+    //buscador
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        initializeSearchController()
+    }
+    
+    func initializeSearchController(){
+        
+        searchController.searchResultsUpdater = self
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        //Placeholder
+        searchController.searchBar.placeholder = "Buscar ciudad"
+        
+        //añadir el searchbar al navigationItem
+        navigationItem.searchController = searchController
+        //añadir el searchbar al header de la tabla. para ello tendriamos que crear una variable ocn la tabla sacando un iboutlet.
+        //self.tableView.tableHeaderView = self.searchController.searchBar
+        
+        definesPresentationContext = true
+        
+        
     }
     
     
@@ -41,5 +70,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
 
 
+}
+
+
+//extension para buscador
+extension ViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        <#code#>
+    }
+    
+    
 }
 
