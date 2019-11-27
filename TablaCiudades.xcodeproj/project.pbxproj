@@ -13,6 +13,7 @@
 		285E1C5A238EE2C500FBCF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285E1C58238EE2C500FBCF53 /* Main.storyboard */; };
 		285E1C5C238EE2C800FBCF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285E1C5B238EE2C800FBCF53 /* Assets.xcassets */; };
 		285E1C5F238EE2C800FBCF53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285E1C5D238EE2C800FBCF53 /* LaunchScreen.storyboard */; };
+		285E1C67238EE70100FBCF53 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E1C66238EE70100FBCF53 /* CustomCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		285E1C5B238EE2C800FBCF53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		285E1C5E238EE2C800FBCF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		285E1C60238EE2C800FBCF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		285E1C66238EE70100FBCF53 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				285E1C5B238EE2C800FBCF53 /* Assets.xcassets */,
 				285E1C5D238EE2C800FBCF53 /* LaunchScreen.storyboard */,
 				285E1C60238EE2C800FBCF53 /* Info.plist */,
+				285E1C66238EE70100FBCF53 /* CustomCellTableViewCell.swift */,
 			);
 			path = TablaCiudades;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				285E1C57238EE2C500FBCF53 /* ViewController.swift in Sources */,
 				285E1C53238EE2C500FBCF53 /* AppDelegate.swift in Sources */,
+				285E1C67238EE70100FBCF53 /* CustomCellTableViewCell.swift in Sources */,
 				285E1C55238EE2C500FBCF53 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

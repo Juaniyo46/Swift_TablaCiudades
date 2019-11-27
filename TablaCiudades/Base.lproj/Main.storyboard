@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="ymo-eD-Eth">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="wVM-0F-8ue" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uU2-z9-IjY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-0h-Xc5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="204" id="9TR-Jn-Fiq" customClass="CustomCellTableViewCell" customModule="TablaCiudades" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="204"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9TR-Jn-Fiq" id="BpI-AG-acl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Granada" translatesAutoresizingMaskIntoConstraints="NO" id="vPS-HG-Y58">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dci-gG-Mak">
+                                                    <rect key="frame" x="108" y="89" width="205" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vPS-HG-Y58" secondAttribute="trailing" id="4ic-wF-Bsc"/>
+                                                <constraint firstItem="vPS-HG-Y58" firstAttribute="leading" secondItem="BpI-AG-acl" secondAttribute="leading" id="6Ty-SB-DIw"/>
+                                                <constraint firstAttribute="bottom" secondItem="vPS-HG-Y58" secondAttribute="bottom" id="Fne-fi-hEa"/>
+                                                <constraint firstItem="vPS-HG-Y58" firstAttribute="top" secondItem="BpI-AG-acl" secondAttribute="top" id="RNn-q4-D0r"/>
+                                                <constraint firstItem="Dci-gG-Mak" firstAttribute="centerY" secondItem="BpI-AG-acl" secondAttribute="centerY" id="aQ5-Gf-Bv9"/>
+                                                <constraint firstItem="Dci-gG-Mak" firstAttribute="centerX" secondItem="BpI-AG-acl" secondAttribute="centerX" id="oxV-NL-FrT"/>
+                                                <constraint firstItem="Dci-gG-Mak" firstAttribute="width" secondItem="vPS-HG-Y58" secondAttribute="width" multiplier="0.101449" id="v6F-Py-YLv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCell" destination="vPS-HG-Y58" id="iwm-U8-0yn"/>
+                                            <outlet property="labelCell" destination="Dci-gG-Mak" id="5OE-Ut-hK7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FMQ-kw-uEE" firstAttribute="trailing" secondItem="hrl-0h-Xc5" secondAttribute="trailing" id="C5E-qG-lNO"/>
+                            <constraint firstItem="hrl-0h-Xc5" firstAttribute="top" secondItem="FMQ-kw-uEE" secondAttribute="top" id="GP5-Kf-Tkr"/>
+                            <constraint firstItem="hrl-0h-Xc5" firstAttribute="leading" secondItem="FMQ-kw-uEE" secondAttribute="leading" id="GZO-SO-nC8"/>
+                            <constraint firstItem="FMQ-kw-uEE" firstAttribute="bottom" secondItem="hrl-0h-Xc5" secondAttribute="bottom" id="OCq-Te-DtN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FMQ-kw-uEE"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6oa-61-5KG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-181.15942028985509" y="81.696428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Granada" width="341" height="192"/>
+    </resources>
 </document>
