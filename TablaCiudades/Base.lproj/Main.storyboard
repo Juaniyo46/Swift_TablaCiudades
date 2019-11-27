@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wVM-0F-8ue">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="ymo-eD-Eth">
             <objects>
-                <viewController id="wVM-0F-8ue" sceneMemberID="viewController">
+                <viewController id="wVM-0F-8ue" customClass="ViewController" customModule="TablaCiudades" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uU2-z9-IjY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="204" id="9TR-Jn-Fiq" customClass="CustomCellTableViewCell" customModule="TablaCiudades" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" rowHeight="204" id="9TR-Jn-Fiq" customClass="CustomCellTableViewCell" customModule="TablaCiudades" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="204"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9TR-Jn-Fiq" id="BpI-AG-acl">
@@ -29,8 +29,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Granada" translatesAutoresizingMaskIntoConstraints="NO" id="vPS-HG-Y58">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dci-gG-Mak">
-                                                    <rect key="frame" x="108" y="89" width="205" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dci-gG-Mak">
+                                                    <rect key="frame" x="105" y="88" width="205" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
@@ -39,11 +39,11 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="vPS-HG-Y58" secondAttribute="trailing" id="4ic-wF-Bsc"/>
                                                 <constraint firstItem="vPS-HG-Y58" firstAttribute="leading" secondItem="BpI-AG-acl" secondAttribute="leading" id="6Ty-SB-DIw"/>
+                                                <constraint firstItem="Dci-gG-Mak" firstAttribute="width" secondItem="BpI-AG-acl" secondAttribute="width" multiplier="0.495169" id="FJb-lZ-Kvm"/>
                                                 <constraint firstAttribute="bottom" secondItem="vPS-HG-Y58" secondAttribute="bottom" id="Fne-fi-hEa"/>
                                                 <constraint firstItem="vPS-HG-Y58" firstAttribute="top" secondItem="BpI-AG-acl" secondAttribute="top" id="RNn-q4-D0r"/>
                                                 <constraint firstItem="Dci-gG-Mak" firstAttribute="centerY" secondItem="BpI-AG-acl" secondAttribute="centerY" id="aQ5-Gf-Bv9"/>
                                                 <constraint firstItem="Dci-gG-Mak" firstAttribute="centerX" secondItem="BpI-AG-acl" secondAttribute="centerX" id="oxV-NL-FrT"/>
-                                                <constraint firstItem="Dci-gG-Mak" firstAttribute="width" secondItem="vPS-HG-Y58" secondAttribute="width" multiplier="0.101449" id="v6F-Py-YLv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -52,6 +52,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wVM-0F-8ue" id="TgZ-jT-Wri"/>
+                                    <outlet property="delegate" destination="wVM-0F-8ue" id="iII-kP-ugk"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
