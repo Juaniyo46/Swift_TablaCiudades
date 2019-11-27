@@ -12,9 +12,10 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var tableView: UITableView!
     
     let arrayCiudades = ["Linares","Granada","Málaga","Madrid","Barcelona"]
-    let filteredCiudades = [String]()
+    var filteredCiudades = [String]()
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
@@ -68,6 +69,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 204
     }
     
+    
+    func filterContentForSearchText(_ searchText:String) {
+        self.filteredCiudades = self.arrayCiudades.filter {
+            (city:String) -> Bool in
+            
+            if city.lowercased().localizedCaseInsensitiveContains(searchText) {
+                return true
+            }else {
+                return false
+            }
+        }
+        
+        tableView.reloadData()
+    }
 
 
 }
@@ -76,7 +91,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //extension para buscador
 extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        <#code#>
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
     }
     
     
